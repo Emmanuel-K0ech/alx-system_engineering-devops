@@ -2,4 +2,5 @@
 1-listit # Display the contents list of current directory
 2-bring_me_home # changes working directory to user's home directory
 3-listfiles # Dispay current directory contents in long format
-4-listmorefiles # listing hidden files in current directory 
+4-listmorefiles # listing hidden files in current directory
+6-firstdirectory # creates a folder in the /tmp folder 
