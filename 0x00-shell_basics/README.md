@@ -1,4 +1,5 @@
 0-current_working_directory # Prints the curent working directory
 1-listit # Display the contents list of current directory
 2-bring_me_home # changes working directory to user's home directory
-3-listfiles # Dispay current directory contents in long format 
+3-listfiles # Dispay current directory contents in long format
+4-listmorefiles # listing hidden files in current directory 
