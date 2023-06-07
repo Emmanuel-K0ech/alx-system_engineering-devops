@@ -8,4 +8,5 @@
 8-firstdelete # deletes the file betty created above
 9-firstdirdeletion # deletes /my_first_directory in /tmp
 10-back # takes me back to my previous working directory
-11-lists # list content of multiple directories  
+11-lists # list content of multiple directories
+12-file_type # print file name of a file in /tmp  
