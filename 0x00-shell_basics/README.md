@@ -4,4 +4,5 @@
 3-listfiles # Dispay current directory contents in long format
 4-listmorefiles # listing hidden files in current directory
 6-firstdirectory # creates a folder in the /tmp folder
-7-movethatfile # moves file betty from /tmp to /tmp/my_first_directory 
+7-movethatfile # moves file betty from /tmp to /tmp/my_first_directory
+8-firstdelete # deletes the file betty created above 
