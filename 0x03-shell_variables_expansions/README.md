@@ -12,3 +12,4 @@
 11-binary_to_decimal: converts a binary number to decimal
 12-combinations: generates all the possible combinations of pairs for a-z with the exception of combination "oo"
 13-print_float: prints a number with two decimal places
+103-water_and_stir: adds two variables and prints results
