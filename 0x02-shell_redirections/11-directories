@@ -1,2 +1,3 @@
 #!/bin/bash
-find . -type d -name "*" | wc -l
+ls -Rla | grep '^d'| wc -l
+
