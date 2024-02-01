@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#changes details in /etc/hosts file
+cp /etc/hosts ~/hosts_new
+sed 's/127.0.0.1/127.0.0.2/' ~/hosts_new
+sed 's/157.240.11.35/8.8.8.8/' ~/hosts_new 
+cp --force ~/hosts_new /etc/hosts
