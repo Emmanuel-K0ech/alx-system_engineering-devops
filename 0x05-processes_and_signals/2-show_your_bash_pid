@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Show PID of file - not using pgrep
+# shellcheck disable=SC2009
+ps -auxeHp $$
