@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#kill 4_to_infinity_and_beyond process
+a=$(pidof 4_to_infinity_and_beyond)
+if [ -n "$a" ]; then
+	kill -9 "$a"
+else
+	echo "Process '4_to_infinity_and_beyond' not found."
+fi
