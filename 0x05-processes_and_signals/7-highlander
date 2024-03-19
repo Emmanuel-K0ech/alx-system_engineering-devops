@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Displays "I am invincible!!!" when receiving a SIGTERM signal
+handle_sigterm() {
+	printf "I am invincible!!!"
+	exit 0
+}
+trap handle_sigterm SIGTERM
+while true; do
+	printf "To infinity and beyond"
+	sleep 2
+done
