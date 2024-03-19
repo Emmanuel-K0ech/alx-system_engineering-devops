@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 #displays text indefinitely with sleep 2 after every iteration
-a=0
-while [ $a -lt 1 ]; do
+handle_sigterm() {
+	printf "Terminated"
+	exit 0
+}
+while true; do
 	printf "To infinity and beyond\n"
 	sleep 2
 done
