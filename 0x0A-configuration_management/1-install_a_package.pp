@@ -1,6 +1,6 @@
 #!/usr/bin/pup
-# This script installs flask from pip3
+# This script installs flask(2.1.0) from pip3
 package { 'flask':
     ensure   => '2.1.0',
-    provider => 'pip',
+    provider => 'pip3',
 }
