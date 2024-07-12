@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Scripts that usess ssh to connect to a servers using a private key
+SERVER_ADDRESS="100.25.129.200"
+ssh -i ~/.ssh/school ubuntu@SERVER_ADDRESS
