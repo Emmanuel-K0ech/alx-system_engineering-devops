@@ -11,7 +11,8 @@ if __name__ == "__main__":
     # Base url for the JSONPlaceholder API
     base_url = "https://jsonplaceholder.typicode.com/"
     user = requests.get(base_url + "users/{}".format(sys.argv[1])).json()
-    todos = requests.get(base_url + "todos", params={"userId": sys.argv[1]}).json()
+    todos = requests.get(base_url + "todos", params={
+                        "userId": sys.argv[1]}).json()
     # Extracts the titles of completed tasks
     completed = [x.get("title") for x in todos if x.get("completed") is True]
     print("Employee {} is done with tasks({}/{}):".format(
