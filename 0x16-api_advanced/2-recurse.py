@@ -5,7 +5,7 @@ import requests
 
 def recurse(subreddit, hot_list=None, after=None):
     """
-    Recursively queries the Reddit API to get all hot titles for a given subreddit.
+    Recursively queries the Reddit API to get all hot titles for a subreddit.
 
     Args:
     subreddit (str): name of the subreddit.
@@ -21,7 +21,7 @@ def recurse(subreddit, hot_list=None, after=None):
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     parameters = {'after': after}
     try:
-        response = requests.get(url, headers=headers, allow_redirects=False, 
+        response = requests.get(url, headers=headers, allow_redirects=False,
                                 params=parameters, timeout=10)
         if response.status_code == 200:
             data = response.json().get('data', {})
