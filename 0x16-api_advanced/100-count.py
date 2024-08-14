@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Recursive function that queries the Reddit API to count keywords"""
+"""100-count Module: Recursive function that queries
+the Reddit API to count keywords"""
 import requests
 import re
 
@@ -7,7 +8,7 @@ import re
 def count_words(subreddit, word_list, after=None, count_dic=None):
     """
     Parses the titles of all hot articles for a given subreddit and counts
-    of the given keywords (case-insensitive, delimited by spaces).
+    of the given keywords.
 
     Args:
     subreddit (str): The name of the subreddit.
@@ -15,8 +16,7 @@ def count_words(subreddit, word_list, after=None, count_dic=None):
     after (str, optional): The after parameter for pagination.
     count_dic (dict, optional): A dictionary to accumulate the keyword counts.
 
-    Returns:
-    None
+    Returns: None
     """
     if count_dic is None:
         count_dic = {word.lower(): 0 for word in word_list}
