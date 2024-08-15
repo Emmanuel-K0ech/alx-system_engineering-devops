@@ -11,25 +11,18 @@ def top_ten(subreddit):
 
     Return: None if subreddit is not valid
     """
-    if not isinstance(subreddit, str) or not subreddit:
-        print("Invalid subreddit name.")
+    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
+    headers = {
+        "User-Agent": "linux:0x16.api.advanced:v1.0.0\
+        (by /u/Helpful_Bread_7117)"
+    }
+    params = {
+        "limit": 10
+    }
+    response = requests.get(url, headers=headers, params=params,
+                            allow_redirects=False)
+    if response.status_code == 404:
+        print("None")
         return
-    headers = {'User-Agent': '0x16-api_advanced'}
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
-    parameters = {'limit': 10}
-    try:
-        response = requests.get(url, headers=headers, allow_redirects=False,
-                                params=parameters, timeout=10)
-        if response.status_code == 200:
-            data = response.json().get('data', {})
-            children = data.get('children', [])
-            if not children:
-                print("No posts found.")
-                return
-            for post in children:
-                title = post.get('data', {}).get('title', 'No title')
-                print(title)
-        else:
-            print(None)
-    except requests.RequestException as e:
-        print(f"An error occurred: {e}")
+    results = response.json().get("data")
+    [print(c.get("data").get("title")) for c in results.get("children")]
