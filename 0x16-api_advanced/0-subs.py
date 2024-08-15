@@ -17,16 +17,10 @@ def number_of_subscribers(subreddit):
         return 0
     url = f'http://www.reddit.com/r/{subreddit}/about.json'
     headers = {
-        'User-Agent': '0x16-api_advanced'
+        'User-Agent': 'linux:myapp:v1.0.0 (by /u/Helpful_Bread_7117)'
     }
-    try:
-        response = requests.get(url, headers=headers, timeout=10)
-        # Ensure the request was successful
-        if response.status_code == 200:
-            data = response.json().get("data", {})
-            # Return the number of subscribers or 0 if not found
-            return data.get("subscribers", 0)
-        else:
-            return 0
-    except requests.RequestException:
+    response = requests.get(url, headers=headers, allow_redirects=False)
+    if response.status_code == 404:
         return 0
+    results = response.json().get("data")
+    return results.get("subscribers")
