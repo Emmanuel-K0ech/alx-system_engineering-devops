@@ -19,7 +19,7 @@ def top_ten(subreddit):
     parameters = {'limit': 10}
     try:
         response = requests.get(url, headers=headers, allow_redirects=False,
-                                params=parameters)
+                                params=parameters, timeout=10)
         if response.status_code == 200:
             data = response.json().get('data', {})
             children = data.get('children', [])
@@ -30,7 +30,6 @@ def top_ten(subreddit):
                 title = post.get('data', {}).get('title', 'No title')
                 print(title)
         else:
-            print("Failed to retrieve posts. Status code:",
-                  response.status_code)
+            print(None)
     except requests.RequestException as e:
         print(f"An error occurred: {e}")
