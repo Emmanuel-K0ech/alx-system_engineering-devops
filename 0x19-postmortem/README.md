@@ -1,7 +1,7 @@
 # 0x19-postmortem
 ### Postmortem: When Our Database Took a Power Nap (And Took the Website Down With It)  
 
-**Issue Summary**  
+### Issue Summary  
 **Duration:** August 12, 2024, 10:30 AM - 1:45 PM UTC (3 hours 15 minutes)  
 **Impact:** The main web app decided it was time for a siesta—85% of users experienced the kind of page load times that make you question your life choices. Another 15% couldn't access the site at all, and probably thought we had disappeared like a magician's rabbit.  
 **Root Cause:** Our database connection pool had a midlife crisis and forgot how to handle high traffic. 
@@ -34,7 +34,7 @@ Our database connection pool was having a bad day, with a maximum connection lim
 - **Monitoring Makeover:** Add shiny new metrics to monitor connection pool usage, so we can catch issues before they explode.
 - **Traffic Torture Tests:** Regular load testing to make sure our system can handle peak times like a pro.
 
-**To-Do List:**
+### To-Do List:
 - [ ] **Boost Connection Pool Limits:** Adjust settings to handle more connections simultaneously.
 - [ ] **Install Connection Pool Metrics Dashboard:** So we can watch those connections like a hawk.
 - [ ] **Schedule Load Testing:** Let’s stress test this baby quarterly to avoid future surprises.
